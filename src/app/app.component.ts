@@ -1,5 +1,6 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ToastrService } from 'ngx-toastr';
+import { NgxSpinnerService } from "ngx-spinner";
 
 @Component({
   selector: 'app-root',
@@ -8,11 +9,12 @@ import { ToastrService } from 'ngx-toastr';
 })
 export class AppComponent implements OnInit, OnDestroy {
   title = 'Senan';
-  constructor(private toastr: ToastrService) { }
+  constructor(private toastr: ToastrService, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
     console.log("Sehife ilk acilanda cagirilacaq funksiya.")
     this.showSuccess();
+    this.showSpinner();
   }
 
   ngOnDestroy(): void {
@@ -23,10 +25,20 @@ export class AppComponent implements OnInit, OnDestroy {
     const myConfig = {
       closeButton: true,
       progressBar: true,
-      timeOut:10000
+      timeOut: 10000
     };
     this.toastr.success('Satış başarıyla tamamlandı.', 'Tebrikler'/*, myConfig*/);
 
   }
+
+
+  showSpinner = () => { 
+    this.spinner.show();
+
+    setTimeout(() => { 
+      this.spinner.hide();
+    }, 5000);
+
+  };
 
 }
