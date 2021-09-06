@@ -25,7 +25,7 @@ export class AppComponent implements OnInit, OnDestroy {
     const myConfig = {
       closeButton: true,
       progressBar: true,
-      timeOut: 10000
+      timeOut: 2000
     };
     this.toastr.success('Satış başarıyla tamamlandı.', 'Tebrikler'/*, myConfig*/);
 
@@ -37,7 +37,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
     setTimeout(() => { 
       this.spinner.hide();
-    }, 5000);
+    }, 1000);
 
   };
 

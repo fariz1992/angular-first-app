@@ -1,0 +1,13 @@
+@include igx-core();
+$custom-palette: igx-palette(
+    $primary: #09f,
+    $secondary: #e41c77,
+    $surface: #fff,
+    $error: #ff134a,
+    $success: #4eb862,
+    $warn: #fbb13c,
+    $info: #1377d5,
+    $grays: #000
+);
+@include igx-theme($palette: $custom-palette, $schema: $light-schema, $roundness: null, $elevation: false);
+@include igx-typography($font-family: "Titillium Web", $type-scale: $default-type-scale);
