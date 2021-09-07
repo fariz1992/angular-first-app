@@ -5,6 +5,8 @@ import { UserComponent } from './user/user.component';
 import { RoleComponent } from './role/role.component';
 import { UserDetailComponent } from './user/user-detail/user-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { UserModule } from './user/user/user.module';
+import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
   {
@@ -13,7 +15,7 @@ const routes: Routes = [
   },
   {
     path: 'user',
-    component: UserComponent
+    loadChildren: () => import('./user/user/user.module').then(m=>m.UserModule)
   },
   {
     path: 'user/:id',
@@ -30,7 +32,9 @@ const routes: Routes = [
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
+  imports: [ 
+    RouterModule.forRoot(routes)
+  ],
   exports: [RouterModule]
 })
 export class AppRoutingModule { }
