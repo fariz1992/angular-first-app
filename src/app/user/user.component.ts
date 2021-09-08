@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute, Params } from '@angular/router';
+import { Observable } from 'rxjs/internal/Observable';
 
 @Component({
   selector: 'app-user',
@@ -7,9 +9,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UserComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router:ActivatedRoute) { }
 
-  ngOnInit(): void {
+  ngOnInit(): void { 
+    this.router.params.subscribe(params=>{
+      alert(params['id']);
+    });
   }
+ 
 
 }

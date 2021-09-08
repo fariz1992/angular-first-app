@@ -12,9 +12,9 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(private toastr: ToastrService, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
-    console.log("Sehife ilk acilanda cagirilacaq funksiya.")
-    this.showSuccess();
-    this.showSpinner();
+   document.addEventListener('click',function(event){
+    console.log(event);
+   });
   }
 
   ngOnDestroy(): void {

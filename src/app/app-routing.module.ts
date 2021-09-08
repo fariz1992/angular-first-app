@@ -2,17 +2,11 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { ContactComponent } from './contact/contact.component';
-import { HomeComponent } from './home/home.component';
-import { UserComponent } from './user/user.component';
-import { UserDetailComponent } from './user/user-detail/user-detail.component';
-import { UserPermissionsComponent } from './user/user-permissions/user-permissions.component';
-import { UserPostsComponent } from './user/user-posts/user-posts.component';
-import { UserSettingsComponent } from './user/user-settings/user-settings.component';
 
 const routes: Routes = [
   {
     path: 'home',
-    component: HomeComponent
+    loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
   }, {
     path: '',
     redirectTo: 'home',
@@ -25,23 +19,10 @@ const routes: Routes = [
     component: AboutusComponent
   }, {
     path: 'user',
-    component: UserComponent
-  }, {
-    path: 'user/:id/detail',
-    component: UserDetailComponent
-  }, {
-    path: 'user/:id/permission',
-    component: UserPermissionsComponent
-  }
-  , {
-    path: 'user/:id/posts',
-    component: UserPostsComponent
-  }, {
-    path: 'user/:id/settings',
-    component: UserSettingsComponent
+    loadChildren: () => import('./user/user.module').then(m => m.UserModule)
   }, {
     path: '**',
-    component: HomeComponent
+    redirectTo:'home'
   }
 ];
 
