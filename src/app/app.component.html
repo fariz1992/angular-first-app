@@ -1,20 +1,48 @@
-<div class="container p-4">
-  <div class="row">
-    <div class="col-md-4 col-xs-6">
-      <ul class="list-inline">
-        <li><button IgxButton routerLink="home">Home</button></li>
-        <li><button IgxButton routerLink="contact">Contact</button></li>
-        <li><button IgxButton routerLink="aboutus">About Us</button></li>
-        <li><button IgxButton  routerLink='user'>User</button></li>
-        <li><button IgxButton  [routerLink]="['user',10,'detail']">User detail (10)</button></li>
-        <li><button IgxButton  [routerLink]="['user',10,'permission']">User permissions (10)</button></li>
-        <li><button IgxButton  [routerLink]="['user',10,'posts']">User posts (10)</button></li>
-        <li><button IgxButton  [routerLink]="['user',10,'settings']">User posts (10)</button></li>
-      </ul>
-    </div> 
-  </div>
-</div> 
-   
+<igx-navbar title="Senan.com" actionButtonIcon="menu" [isActionButtonVisible]="true" igxToggleAction="navigation" [isOpen]="false" >
+  <igx-icon>search</igx-icon>
+  <igx-icon>favorite</igx-icon>
+  <igx-icon>more_vert</igx-icon>
+</igx-navbar>
+<igx-nav-drawer id="navigation" #drawer [isOpen]="true" [pinThreshold]="5000">
+  <ng-template igxDrawer>
+    <nav>
+      <span igxDrawerItem [isHeader]="true">Menu</span> 
+      <span igxDrawerItem igxRipple routerLink="home">
+        <igx-icon family="material">estate</igx-icon>
+        <span>Home</span>
+      </span>
+      <span igxDrawerItem igxRipple routerLink="contact">
+        <igx-icon family="material">bulldozer</igx-icon>
+        <span>Contact</span>
+      </span>
+      <span igxDrawerItem igxRipple routerLink="aboutus">
+        <igx-icon family="material">pin-left</igx-icon>
+        <span>About Us</span>
+      </span>
+      <span igxDrawerItem igxRipple routerLink="user">
+        <igx-icon family="material">bitcoin</igx-icon>
+        <span>User</span>
+      </span>
+      <span igxDrawerItem igxRipple [routerLink]="['user',10,'detail']">
+        <igx-icon family="material">estate</igx-icon>
+        <span>User detail (10)</span>
+      </span>
+      <span igxDrawerItem igxRipple [routerLink]="['user',10,'permission']">
+        <igx-icon family="material">estate</igx-icon>
+        <span>User permissions (10)</span>
+      </span>
+      <span igxDrawerItem igxRipple [routerLink]="['user',10,'posts']">
+        <igx-icon family="material">business-development</igx-icon>
+        <span>User posts (10)</span>
+      </span>
+      <span igxDrawerItem igxRipple [routerLink]="['user',10,'settings']">
+        <igx-icon family="material">development</igx-icon>
+        <span>User settings (10)</span>
+      </span>
+      
+    </nav>
+  </ng-template>
+</igx-nav-drawer> 
 <router-outlet></router-outlet>
 
 <ngx-spinner bdColor = "rgba(78,78,78,0.8)"  size = "medium" color = "#00b6cb" type = "ball-spin-fade"  [fullScreen] = "true">  <p style="color: white" > Yüklenir... </p> </ngx-spinner>
