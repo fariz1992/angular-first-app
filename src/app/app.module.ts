@@ -8,11 +8,27 @@ import { CommonModule } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'; 
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from "ngx-spinner";
+import { UserComponent } from './user/user.component';
+import { HomeComponent } from './home/home.component';
+import { AboutusComponent } from './aboutus/aboutus.component';
+import { ContactComponent } from './contact/contact.component';
+import { UserDetailComponent } from './user/user-detail/user-detail.component';
+import { UserSettingsComponent } from './user/user-settings/user-settings.component';
+import { UserPermissionsComponent } from './user/user-permissions/user-permissions.component';
+import { UserPostsComponent } from './user/user-posts/user-posts.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    UserComponent,
+    HomeComponent,
+    AboutusComponent,
+    ContactComponent,
+    UserDetailComponent,
+    UserSettingsComponent,
+    UserPermissionsComponent,
+    UserPostsComponent
   ],
   imports: [
     BrowserModule,
