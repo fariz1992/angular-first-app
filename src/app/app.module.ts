@@ -25,6 +25,7 @@ import {
   IgxToggleModule
 } from 'igniteui-angular';
 import { FormsModule } from '@angular/forms';
+import { DataBindingComponent } from './data-binding/data-binding.component';
 
 
 @NgModule({

@@ -1,16 +1,19 @@
-<p>ertyu</p>
 <igx-navbar title="Senan.com" actionButtonIcon="menu" [isActionButtonVisible]="true" igxToggleAction="navigation" [isOpen]="false" >
   <igx-icon>search</igx-icon>
   <igx-icon>favorite</igx-icon>
   <igx-icon>more_vert</igx-icon>
 </igx-navbar>
-<igx-nav-drawer id="navigation" #drawer [isOpen]="true" [pinThreshold]="5000">
+<igx-nav-drawer id="navigation" #drawer [isOpen]="false" [pinThreshold]="3000">
   <ng-template igxDrawer>
     <nav>
       <span igxDrawerItem [isHeader]="true">Menu</span> 
       <span igxDrawerItem igxRipple routerLink="home">
         <igx-icon family="material">estate</igx-icon>
         <span>Home</span>
+      </span>
+      <span igxDrawerItem igxRipple routerLink="data-binding">
+        <igx-icon family="material">estate</igx-icon>
+        <span>Data Binding</span>
       </span>
       <span igxDrawerItem igxRipple routerLink="contact">
         <igx-icon family="material">bulldozer</igx-icon>
