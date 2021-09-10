@@ -1,0 +1,32 @@
+<h4>One way binding: Component to DOM</h4>
+<ul>
+    <li>Interpolation: {{user.firstName+' '+user.lastName}}</li>
+    <li>Property binding:<input type="text" [value]="user.title" /> </li>
+    <li>Attribute binding:<input type="text" [value]="user.title" [attr.disabled]="user.firstName==='Senan' ? 'disabled' : null" /> </li>
+    <li>Class binding:<input type="text" [value]="user.title" [class.orange]="user.firstName==='Senan'?true:false" /> </li>
+    <li>Style binding:<input type="text" [value]="user.title" [style.fontWeight]="user.fontWeight" /> </li> 
+</ul>
+
+<h4>One way binding: DOM to component</h4>
+<ul>
+    <li>Event1: <button type="button" (click)="showMessage($event);" >Kaydet</button> </li>
+    <li>Event 2: <input type="text" (keyup.enter)="showMessage($event);" placeholder="hello" /> </li>
+</ul>
+
+<h4>Two ways binding:</h4>
+<ul>
+    <li>ngModel: <input type="text" [(ngModel)]="user.title" /></li>
+</ul>
+
+<h4>Cookie service:</h4>
+<ul>
+    <li>Add <button type="button" (click)="AddOrUpdate(user.title);Get();" >{{cookieValue}}</button> </li>
+</ul>
+
+<div style="width:200px;margin:20px;">
+    <igx-input-group> 
+        <label igxLabel for="phone">Phone</label>
+        <input igxInput name="phone" type="tel" />
+        <igx-icon igxSuffix>phone</igx-icon>
+    </igx-input-group>
+</div>

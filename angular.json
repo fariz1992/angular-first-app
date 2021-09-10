@@ -7,7 +7,8 @@
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
-          "style": "scss"
+          "style": "scss",
+          "skipTests": true
         },
         "@schematics/angular:application": {
           "strict": true
@@ -33,7 +34,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [ "./node_modules/hammerjs/hammer.min.js"]
           },
           "configurations": {
             "production": {
@@ -101,7 +102,7 @@
             "styles": [
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [ "./node_modules/hammerjs/hammer.min.js"]
           }
         }
       }

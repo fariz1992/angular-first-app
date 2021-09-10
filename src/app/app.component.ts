@@ -12,9 +12,13 @@ export class AppComponent implements OnInit, OnDestroy {
   constructor(private toastr: ToastrService, private spinner: NgxSpinnerService) { }
 
   ngOnInit(): void {
-    console.log("Sehife ilk acilanda cagirilacaq funksiya.")
-    this.showSuccess();
-    this.showSpinner();
+  //  document.addEventListener('click',function(event){
+  //   console.log(event);
+  //  });
+
+  
+
+
   }
 
   ngOnDestroy(): void {
@@ -25,7 +29,7 @@ export class AppComponent implements OnInit, OnDestroy {
     const myConfig = {
       closeButton: true,
       progressBar: true,
-      timeOut: 10000
+      timeOut: 500
     };
     this.toastr.success('Satış başarıyla tamamlandı.', 'Tebrikler'/*, myConfig*/);
 
@@ -37,7 +41,7 @@ export class AppComponent implements OnInit, OnDestroy {
 
     setTimeout(() => { 
       this.spinner.hide();
-    }, 5000);
+    }, 500);
 
   };
 

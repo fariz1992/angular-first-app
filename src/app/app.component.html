@@ -1,19 +1,50 @@
-<div class="container p-4">
-  <div class="row">
-    <div class="col-md-4 col-xs-6">title: {{ title }}</div>
-    <div class="col-md-4 col-xs-6" style="height:200px; border: 2px solid #444;position: relative;">
-      <ngx-spinner       
-      bdColor = "rgba(78,78,78,0.8)"       
-      size = "medium"       
-      color = "#00b6cb"       
-      type = "ball-spin-fade"       
-      [fullScreen] = "true"
-      template = "&lt;img src='https://media.giphy.com/media/o8igknyuKs6aY/giphy.gif' /&gt;" >
-        <p style="color: white" > Yüklenir... </p>
-      </ngx-spinner>
-    </div>
-    <div class="col-md-4 col-xs-6">Hasanov</div>
-  </div>
-</div> 
-   
+<igx-navbar title="Senan.com" actionButtonIcon="menu" [isActionButtonVisible]="true" igxToggleAction="navigation" [isOpen]="false" >
+  <igx-icon>search</igx-icon>
+  <igx-icon>favorite</igx-icon>
+  <igx-icon>more_vert</igx-icon>
+</igx-navbar>
+<igx-nav-drawer id="navigation" #drawer [isOpen]="false" [pinThreshold]="3000">
+  <ng-template igxDrawer>
+    <nav>
+      <span igxDrawerItem [isHeader]="true">Menu</span> 
+      <span igxDrawerItem igxRipple routerLink="home"> 
+        <span>Home</span>
+      </span>
+      <span igxDrawerItem igxRipple routerLink="data-bind"> 
+        <span>Data Binding</span>
+      </span>
+      <span igxDrawerItem igxRipple routerLink="contact">
+      
+        <span>Contact</span>
+      </span>
+      <span igxDrawerItem igxRipple routerLink="aboutus">
+      
+        <span>About Us</span>
+      </span>
+      <span igxDrawerItem igxRipple routerLink="user">
+     
+        <span>User</span>
+      </span>
+      <span igxDrawerItem igxRipple [routerLink]="['user',10,'detail']">
+      
+        <span>User detail (10)</span>
+      </span>
+      <span igxDrawerItem igxRipple [routerLink]="['user',10,'permission']">
+       
+        <span>User permissions (10)</span>
+      </span>
+      <span igxDrawerItem igxRipple [routerLink]="['user',10,'posts']">
+       
+        <span>User posts (10)</span>
+      </span>
+      <span igxDrawerItem igxRipple [routerLink]="['user',10,'settings']">
+       
+        <span>User settings (10)</span>
+      </span>
+      
+    </nav>
+  </ng-template>
+</igx-nav-drawer> 
 <router-outlet></router-outlet>
+
+<ngx-spinner bdColor = "rgba(78,78,78,0.8)"  size = "medium" color = "#00b6cb" type = "ball-spin-fade"  [fullScreen] = "true">  <p style="color: white" > Yüklenir... </p> </ngx-spinner>
