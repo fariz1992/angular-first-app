@@ -4,8 +4,11 @@ import { BrowserModule } from '@angular/platform-browser';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 
-import { CommonModule } from '@angular/common';
+import { CommonModule, registerLocaleData } from '@angular/common';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import localAzLatn from '@angular/common/locales/az-Latn';
+import localExtraAzLatn from '@angular/common/locales/extra/az-Latn';
+
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSpinnerModule } from "ngx-spinner";
 import { UserComponent } from './user/user.component';
@@ -27,6 +30,7 @@ import {
 import { FormsModule } from '@angular/forms';
 import { PipeComponent } from './pipe/pipe.component';
 
+registerLocaleData(localAzLatn, 'az-Latn', localExtraAzLatn);
 
 @NgModule({
   declarations: [

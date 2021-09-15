@@ -1,1 +1,44 @@
-<p>pipe works!</p>
+<p>Pipe dersleri</p>
+<div class="row">
+    <div class="col-md-2" style="border: 1px solid #444">
+        <strong>lowercase pipe</strong>
+        <p>{{fullName | lowercase}}</p>
+    </div>
+    <div class="col-md-2" style="border: 1px solid #444">
+        <strong>uppercase pipe</strong>
+        <p>{{state | uppercase}}</p>
+        <p>{{state.toLocaleUpperCase('az-Latn')}}</p>
+    </div>
+    <div class="col-md-2" style="border: 1px solid #444">
+        <strong>titlecase pipe</strong>
+        <p>{{state | titlecase}}</p>
+    </div>
+
+    <div class="col-md-2" style="border: 1px solid #444">
+        <strong>date pipe</strong>
+        <p>{{tarix | date :'dd-MM-yyyy':'':'az-Latn'}}</p>
+    </div>
+
+    <div class="col-md-2" style="border: 1px solid #444">
+        <strong>currency pipe</strong>
+        <p>{{balance | currency }}</p>
+        <p>{{balance | currency :'AZN':'symbol':'1.2-3':'az-Latn'}}</p>
+    </div>
+    <div class="col-md-2" style="border: 1px solid #444">
+        <strong>json pipe</strong>
+        <code>  <pre>{{data | json }}</pre></code>
+    </div>
+    <div class="col-md-2" style="border: 1px solid #444">
+        <strong>percent pipe</strong>
+        <p>{{faizDeyeri | percent:'1.1-2':'az-Latn' }}</p>
+    </div>
+    <div class="col-md-2" style="border: 1px solid #444">
+        <strong>decimal pipe</strong>
+        <p>{{faizDeyeri | number:'1.0-2':'az-Latn' }}</p>
+    </div>
+    <div class="col-md-2" style="border: 1px solid #444">
+        <strong>slice pipe</strong>
+        <p>{{state | slice :0:8 }}</p>
+        <p>{{state | uppercase | slice :-12 }}</p>
+    </div>
+</div>
