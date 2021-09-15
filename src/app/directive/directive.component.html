@@ -1,0 +1,64 @@
+<h4>Structural directives</h4>
+<div class="row">
+    <div class="col-md-3">
+        <h4>*ngIf - 1</h4>
+        <input type="text" [(ngModel)]="name" />
+        <p *ngIf="name==='Senan'">Salam Senan.</p>
+        <span>Lorem Ipsum is simply <ng-container *ngIf="name==='Senan'">dummy text of the printing and typesetting
+                industry</ng-container> . Lorem Ipsum has been the industry's standard dummy text ever since the 1500s,
+            when an .</span>
+    </div>
+
+    <div class="col-md-3">
+        <h4>*ngIf - 2</h4>
+        <input type="text" [(ngModel)]="name" />
+        <div *ngIf="name==='Senan';then birinci;else ikinci;"> </div>
+        <ng-template #birinci>Salam Senan</ng-template>
+        <ng-template #ikinci>Salam Dunya</ng-template>
+
+    </div>
+
+
+    <div class="col-md-3">
+        <h4>*ngFor</h4>
+        <p *ngFor="let item of list; let i = index" appHighlight>
+            Name: {{item.name}}<br/>
+            Url: {{item.url}} <br/>
+            Index:{{i}}
+        </p>
+    </div>
+
+    
+    <div class="col-md-3">
+        <h4>*ngSwitch</h4>
+        <input type="text" [(ngModel)]="name" />
+        <div [ngSwitch]="name">
+            <p *ngSwitchCase="'Senan'">Salam Senan</p>
+            <p *ngSwitchCase="'Enis'">Salam Enis</p>
+            <p *ngSwitchCase="'Ugur'">Salam Ugur</p>
+            <p *ngSwitchDefault >Salam Dunya</p>
+        </div>
+    </div>
+</div>
+
+<h4>Attribute directives</h4>
+<div class="row">
+    
+    <div class="col-md-5">
+        <h4>ngClass</h4>
+        <p [ngClass]="name" appHighlight>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+    </div> 
+
+    <div class="col-md-5">
+        <h4>ngStyle</h4>
+        <p [ngStyle]="{
+            'color':color,
+            'font-weight':'bold'
+        }" (click)="color='red';">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+    </div> 
+
+    <div class="col-md-5">
+        <h4>custom attribute directive</h4>
+        <p [appHighlight]="name" [secondColor]="'yellow'">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s.</p>
+    </div> 
+</div>

@@ -20,10 +20,18 @@ const routes: Routes = [
   }, {
     path: 'user',
     loadChildren: () => import('./user/user.module').then(m => m.UserModule)
-  }, 
+  },
   {
     path: 'data-bind',
     loadChildren: () => import('./data-binding/data-binding.module').then(m => m.DataBindingModule)
+  },
+  {
+    path: 'directive',
+    loadChildren: () => import('./directive/directive.module').then(m => m.DirectiveModule)
+  },
+  {
+    path: 'pipe',
+    loadChildren: () => import('./pipe/pipe.module').then(m => m.PipeModule)
   },
   {
     path: '**',
