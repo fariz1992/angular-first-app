@@ -22,6 +22,15 @@ export class PipeComponent implements OnInit {
     Count: 10
   };
 
+  rayonlar: string[] = [
+    'Baki',
+    'Naxcivan',
+    'Quba',
+    'Qusar',
+    'Zengilan',
+    'Goycay'
+  ];
+
   constructor() { }
 
   ngOnInit(): void {

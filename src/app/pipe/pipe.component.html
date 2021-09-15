@@ -41,4 +41,18 @@
         <p>{{state | slice :0:8 }}</p>
         <p>{{state | uppercase | slice :-12 }}</p>
     </div>
+
+    <div class="col-md-2" style="border: 1px solid #444">
+        <strong>custom uppercase pipe</strong>
+        <p>{{state | azUppercase}}</p>
+    </div>
+    <div class="col-md-2" style="border: 1px solid #444">
+        <strong>custom manat pipe</strong>
+        <p>{{balance | manat}}</p>
+    </div>
+    <div class="col-md-2" style="border: 1px solid #444">
+        <strong>custom filter pipe</strong>
+        <p *ngFor="let rayon of rayonlar | myFilter:'Z' ">{{rayon}}</p>
+
+    </div>
 </div>
