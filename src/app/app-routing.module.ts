@@ -1,13 +1,15 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { AboutusComponent } from './aboutus/aboutus.component';
+import { AngularFormComponent } from './angular-form/angular-form.component';
 import { ContactComponent } from './contact/contact.component';
 
 const routes: Routes = [
   {
     path: 'home',
     loadChildren: () => import('./home/home.module').then(m => m.HomeModule)
-  }, {
+  }, 
+  {
     path: '',
     redirectTo: 'home',
     pathMatch: 'full',
@@ -32,6 +34,10 @@ const routes: Routes = [
   {
     path: 'pipe',
     loadChildren: () => import('./pipe/pipe.module').then(m => m.PipeModule)
+  },
+  {
+    path: 'template-driven',
+    component:AngularFormComponent
   },
   {
     path: '**',

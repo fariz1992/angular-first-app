@@ -1,0 +1,56 @@
+<!-- <div class="container">
+    <p>Qeydiyyat Formu</p>
+    <div class="row">
+        <div class="col-md-3">
+            <form (ngSubmit)="save(myForm);" #myForm="ngForm">
+                <div class="mb-3 row">
+                    <label for="fullName" class="form-label">Ad ve Soyad</label>
+                    <input type="text" class="form-control" id="fullName" placeholder="ad ve soyad" ngModel name="fullName" required #fullName="ngModel">
+                    <div [hidden]="fullName.valid" style="color:red;">Ad ve Soyadi daxil edin!</div>
+                </div>
+                <div class="mb-3 row">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" placeholder="name@example.com" ngModel name="email" required>
+                </div>
+                <div class="mb-3 row">
+                    <button type="submit" [disabled]="!myForm.form.valid">Yaddasa yaz</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> -->
+<div class="container">
+    <p>Qeydiyyat Formu</p>
+    <div class="row">
+        <div class="col-md-3">
+            <form [formGroup]="registerForm" (ngSubmit)="onSubmit();">
+                <div class="mb-3 row">
+                    <label for="fullName" class="form-label">Ad ve Soyad</label>
+                    <input type="text" class="form-control" id="fullName" formControlName="fullName"
+                    [class.borderRed]="registerForm.controls.fullName.errors?.whitespace && registerForm.controls.fullName.dirty">
+                    <div style="color:red;" *ngIf="registerForm.controls.fullName.errors?.required && registerForm.controls.fullName.dirty" >Ad ve Soyadi daxil edin!</div>
+                    <div style="color:red;" *ngIf="registerForm.controls.fullName.errors?.minlength && registerForm.controls.fullName.dirty" >
+                     Ad ve soyad ucun minimum uzunluq {{registerForm.controls.fullName.errors?.minlength.requiredLength}} herf olmali.
+                    </div>
+                    <div style="color:red;" *ngIf="registerForm.controls.fullName.errors?.maxlength && registerForm.controls.fullName.dirty" >
+                        Ad ve soyad ucun max uzunluq {{registerForm.controls.fullName.errors?.maxlength.requiredLength}} herf olmali.
+                       </div> 
+                </div>
+                <div class="mb-3 row">
+                    <label for="email" class="form-label">Email</label>
+                    <input type="email" class="form-control" id="email" formControlName="email">
+                    <div style="color:red;" *ngIf="registerForm.controls.email.errors?.pattern && registerForm.controls.email.dirty" >
+                        Email xetali! Xahis olunur duzgun email daxil edin.
+                       </div>
+                       <div style="color:red;" *ngIf="registerForm.controls.email.errors?.blacklist?.required && registerForm.controls.email.dirty" >
+                        Email xetali! Xahis olunur {{registerForm.controls.email.errors?.blacklist?.currentValue}} herfini daxil etmeyin.
+                       </div>
+                </div>
+                <div class="mb-3 row">
+                    <button type="submit">Yaddasa yaz</button>  
+                    <!-- [disabled]="!this.registerForm.valid" -->
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

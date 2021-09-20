@@ -27,8 +27,11 @@ import {
   IgxRippleModule,
   IgxToggleModule
 } from 'igniteui-angular';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { PipeComponent } from './pipe/pipe.component';
+import { SaatComponent } from 'src/libs';
+import { AngularFormComponent } from './angular-form/angular-form.component';
+
 
 registerLocaleData(localAzLatn, 'az-Latn', localExtraAzLatn);
 
@@ -42,7 +45,9 @@ registerLocaleData(localAzLatn, 'az-Latn', localExtraAzLatn);
     UserDetailComponent,
     UserSettingsComponent,
     UserPermissionsComponent,
-    UserPostsComponent
+    UserPostsComponent,
+    SaatComponent,
+    AngularFormComponent
   ],
   imports: [
     BrowserModule,
@@ -61,7 +66,8 @@ registerLocaleData(localAzLatn, 'az-Latn', localExtraAzLatn);
     IgxButtonModule,
     IgxNavigationDrawerModule,
     IgxRippleModule,
-    IgxToggleModule
+    IgxToggleModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
